@@ -1,0 +1,37 @@
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springVersion="5.1.6.RELEASE"
+    junitVersion="5.4.1"
+}
+
+jar {
+    archiveBaseName = 'mastercraftcoding-aws-sqs'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility=11
+targetCompatibility=11
+
+dependencies {
+    // Logback and SLF4J dependencies
+    compile "ch.qos.logback:logback-classic:1.2.3"
+    compile "ch.qos.logback:logback-core:1.2.3"
+    compile "org.slf4j:slf4j-api:1.7.26"
+
+    // Spring dependencies
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+
+    // Unit testing dependencies
+    testCompile "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testCompile "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testCompile "org.springframework:spring-test:$springVersion"
+}
