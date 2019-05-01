@@ -1,2 +1,5 @@
-# mastercraftcoding-aws-sqs
-Master Craft Coding - AWS SQS Spring Library
+# AWS SQS Library
+The mastercraftcoding-aws-sqs library is intended to aid in the use of Amazon SQS for
+Java Spring-based projects.
+ 
+
