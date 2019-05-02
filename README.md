@@ -113,5 +113,3 @@ instances will be configured and ready for use.
 
 ## Sending Messages
 
-- [ ] test
-- [x] another test
