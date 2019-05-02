@@ -7,6 +7,11 @@ Java Spring-based projects.
 **`aws.sqs.accessKeyId`** - This value should be set to the Amazon Web Services access key assigned to your AWS account.
 **`aws.sqs.secretAccessKey`** - This is the secret key that is associated with the above "accessKeyId".
 
+## Logging
+
+AWS SQS using the slf4j logging interface and should therefore be compatible with any logging system implementations
+that support this interface. 
+
 ## Security Rights
 The account associated with the above security information must have all access rights to the SQS service
 for the functionality in this library to work properly.
@@ -90,3 +95,23 @@ public class MyConfiguration {
     </bean>
 </beans>
 ```
+
+All `QueueConfiguration` instances should be named so that they can be injected into the code that needs to reference
+them.  For example:
+
+```java
+public class MyClass {
+ 
+    @Autowired
+    @Qualifier("EmailQueueConfiguration")
+    private QueueConfiguration emailQueueConfiguration;
+}
+```
+The `QueueManager` class, being Spring-aware, will discover all instances of `QueueConfiguration` and ensure that each one
+has been created in the Amazon SQS system.  Once `QueueManager` initialization has completed, all SQS `QueueConfiguration` 
+instances will be configured and ready for use.
+
+## Sending Messages
+
+- [ ] test
+- [x] another test
