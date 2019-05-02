@@ -10,6 +10,7 @@ repositories {
 ext {
     springVersion="5.1.6.RELEASE"
     junitVersion="5.4.1"
+    amazonSqsVersion="2.5.24"
 }
 
 jar {
@@ -29,6 +30,9 @@ dependencies {
     // Spring dependencies
     compile "org.springframework:spring-core:$springVersion"
     compile "org.springframework:spring-context:$springVersion"
+
+    // Amazon SQS SDK
+    compile "software.amazon.awssdk:sqs:$amazonSqsVersion"
 
     // Unit testing dependencies
     testCompile "org.junit.jupiter:junit-jupiter-api:${junitVersion}"

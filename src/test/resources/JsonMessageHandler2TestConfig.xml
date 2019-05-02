@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="Testing.properties"/>
+    </bean>
+
+    <bean id="queueManager" class="com.mastercraftcoding.aws.sqs.QueueManager" scope="singleton">
+        <constructor-arg type="software.amazon.awssdk.regions.Region" value="US_EAST_1"/>
+        <constructor-arg type="com.mastercraftcoding.aws.sqs.RuntimeEnvironment" value="IntegrationTesting"/>
+        <constructor-arg value="IntegrationTestSendReceiveY"/>
+    </bean>
+
+    <bean id="QueueConfiguration" class="com.mastercraftcoding.aws.sqs.QueueConfiguration">
+        <property name="queueBaseName" value="TestQueueJson2"/>
+        <property name="fifoQueue" value="false"/>
+        <property name="createDeadLetterQueue" value="false"/>
+        <property name="receiveMessageWaitTimeSeconds" value="20"/>
+    </bean>
+
+    <bean id="TestMessageHandle" class="com.mastercraftcoding.aws.sqs.TestJsonMessageHandler"/>
+</beans>
