@@ -13,7 +13,7 @@ import java.util.HashSet;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration( classes = {TestConfiguration_MessageHandlerTest1.class, TestMessageHandler.class} )
-@TestPropertySource("classpath:Testing.properties")
+@TestPropertySource("file:${user.home}/mcc/mcc.properties")
 public class MessageHandlerTest1 {
 
     @Autowired

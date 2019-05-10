@@ -9,7 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration( classes = {TestConfiguration_NoFifoNoDeadLetter.class} )
-@TestPropertySource("classpath:Testing.properties")
+@TestPropertySource("file:${user.home}/mcc/mcc.properties")
 public class QueueManagerTests_NoFifoNoDeadLetter extends CreateAndDestroySqsQueuesBase {
 
     @Test

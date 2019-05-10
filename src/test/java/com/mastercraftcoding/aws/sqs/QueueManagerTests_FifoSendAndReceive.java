@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration( classes = {TestConfiguration_FifoSendReceive.class} )
-@TestPropertySource("classpath:Testing.properties")
+@TestPropertySource("file:${user.home}/mcc/mcc.properties")
 public class QueueManagerTests_FifoSendAndReceive {
 
     @Autowired
