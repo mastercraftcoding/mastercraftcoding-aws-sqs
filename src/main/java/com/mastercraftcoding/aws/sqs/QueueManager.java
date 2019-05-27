@@ -24,8 +24,8 @@ public class QueueManager implements ApplicationContextAware, InitializingBean, 
     private ApplicationContext applicationContext;
     private SqsClient sqsClient;
     private Region targetRegion;
-    private RuntimeEnvironment runtimeEnvironment;
-    private String applicationName;
+    private final RuntimeEnvironment runtimeEnvironment;
+    private final String applicationName;
 
     @Value("${aws.sqs.accessKeyId}")
     private String awsAccessKeyId;
@@ -33,8 +33,8 @@ public class QueueManager implements ApplicationContextAware, InitializingBean, 
     @Value("${aws.sqs.secretAccessKey}")
     private String awsSecretAccessKey;
 
-    private HashSet<QueueConfiguration> registeredQueues;
-    private HashSet<MessageHandlerDriverThread> messageHandlerDriverThreads;
+    private final HashSet<QueueConfiguration> registeredQueues;
+    private final HashSet<MessageHandlerDriverThread> messageHandlerDriverThreads;
 
     public QueueManager(Region targetRegion, RuntimeEnvironment runtimeEnvironment, String applicationName) {
         this.targetRegion = targetRegion;
@@ -442,9 +442,7 @@ public class QueueManager implements ApplicationContextAware, InitializingBean, 
             try { hiddenMessageCount = Integer.parseInt(hiddenMessageCountString); } catch( Throwable t ) {}
         }
 
-        QueueStatistics returnStatistics = new QueueStatistics(messageCount, delayedMessageCount, hiddenMessageCount);
-
-        return returnStatistics;
+        return new QueueStatistics(messageCount, delayedMessageCount, hiddenMessageCount);
     }
 
     private void throwOnFailure(SqsResponse sqsResponse) {

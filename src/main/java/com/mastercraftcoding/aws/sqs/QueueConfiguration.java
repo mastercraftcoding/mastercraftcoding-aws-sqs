@@ -22,8 +22,8 @@ import org.springframework.beans.factory.InitializingBean;
  */
 public class QueueConfiguration implements InitializingBean {
 
-    private QueueUserConfiguration userConfiguration = new QueueUserConfiguration();
-    private QueueSystemConfiguration systemConfiguration = new QueueSystemConfiguration();
+    private final QueueUserConfiguration userConfiguration = new QueueUserConfiguration();
+    private final QueueSystemConfiguration systemConfiguration = new QueueSystemConfiguration();
 
     private class QueueUserConfiguration {
 
@@ -258,7 +258,7 @@ public class QueueConfiguration implements InitializingBean {
 
     public static class Builder {
 
-        QueueConfiguration returnConfiguration;
+        final QueueConfiguration returnConfiguration;
 
         public Builder() {
             returnConfiguration = new QueueConfiguration();

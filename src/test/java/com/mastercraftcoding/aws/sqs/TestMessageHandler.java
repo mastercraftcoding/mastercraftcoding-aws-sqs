@@ -14,7 +14,7 @@ public class TestMessageHandler implements MessageHandler {
     @Autowired
     private QueueManager queueManager;
 
-    public HashSet<String> messageReceiveSet = new HashSet<>();
+    public final HashSet<String> messageReceiveSet = new HashSet<>();
 
 
     @Override

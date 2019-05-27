@@ -13,7 +13,7 @@ public class TestJsonMessageHandler extends JsonMessageHandlerAbstractBase {
     @Autowired
     private QueueConfiguration queueConfiguration;
 
-    private List<Object> receivedMessages = new ArrayList<>();
+    private final List<Object> receivedMessages = new ArrayList<>();
 
     public TestJsonMessageHandler() {
         super(EmailPasswordResetMessage.class, NewUserEmailMessage.class);

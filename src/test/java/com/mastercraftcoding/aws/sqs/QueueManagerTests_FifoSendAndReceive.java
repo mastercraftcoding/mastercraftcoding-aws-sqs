@@ -69,7 +69,7 @@ public class QueueManagerTests_FifoSendAndReceive {
                 .queueConfiguration(targetQueue)
                 .build();
 
-        sendMessage.sendMessage();;
+        sendMessage.sendMessage();
 
         // Determine the number of messages
         QueueStatistics queueStatistics = queueManager.currentMessageCount(targetQueue);

@@ -30,7 +30,7 @@ public class JsonBasedMessageHandlerTest1 {
     @Autowired
     private TestJsonMessageHandler messageHandler;
 
-    private List<String> jsonMessageStream = new ArrayList<>();
+    private final List<String> jsonMessageStream = new ArrayList<>();
 
     @Test
     public void TestJsonBasedMessageHandle() throws Exception {

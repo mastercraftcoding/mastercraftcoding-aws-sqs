@@ -2,9 +2,9 @@ package com.mastercraftcoding.aws.sqs;
 
 public class QueueStatistics {
 
-    private int messageCount;
-    private int delayedMessageCount;
-    private int invisibleMessageCount;
+    private final int messageCount;
+    private final int delayedMessageCount;
+    private final int invisibleMessageCount;
 
     public QueueStatistics(int messageCount, int delayedMessageCount, int invisibleMessageCount) {
         this.messageCount = messageCount;

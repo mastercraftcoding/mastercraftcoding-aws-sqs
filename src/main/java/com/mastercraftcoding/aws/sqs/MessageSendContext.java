@@ -16,7 +16,7 @@ public class MessageSendContext {
     private String messageFifoGroupId;
     private String messageText;
     private int messageDelaySeconds;
-    private HashMap<String, MessageAttributeValue> customAttributes = new HashMap<>();
+    private final HashMap<String, MessageAttributeValue> customAttributes = new HashMap<>();
 
     private MessageSendContext() {
     }
@@ -27,7 +27,7 @@ public class MessageSendContext {
 
     public static class Builder {
 
-        private MessageSendContext messageSendContext;
+        private final MessageSendContext messageSendContext;
 
         private Builder() {
             this.messageSendContext = new MessageSendContext();

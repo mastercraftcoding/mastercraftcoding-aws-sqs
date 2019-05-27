@@ -4,7 +4,7 @@ public class RuntimeEnvironment {
 
     public static RuntimeEnvironment Development = new RuntimeEnvironment("Development");
     public static RuntimeEnvironment UnitTest = new RuntimeEnvironment("UnitTest");
-    public static RuntimeEnvironment IntegrationTesting = new RuntimeEnvironment("IntegrationTest");
+    public static final RuntimeEnvironment IntegrationTesting = new RuntimeEnvironment("IntegrationTest");
     public static RuntimeEnvironment Testing = new RuntimeEnvironment("Testing");
     public static RuntimeEnvironment QualityAssurance = new RuntimeEnvironment("QualityAssurance");
     public static RuntimeEnvironment Staging = new RuntimeEnvironment("Staging");
@@ -14,7 +14,7 @@ public class RuntimeEnvironment {
         return new RuntimeEnvironment(environmentName);
     }
 
-    private String environmentName;
+    private final String environmentName;
 
     private RuntimeEnvironment(String environmentName) {
         this.environmentName = environmentName;

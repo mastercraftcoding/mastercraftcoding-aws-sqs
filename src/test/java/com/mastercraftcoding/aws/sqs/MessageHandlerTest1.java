@@ -26,7 +26,7 @@ public class MessageHandlerTest1 {
     @Autowired
     private TestMessageHandler messageHandler;
 
-    private HashSet<String> messageSendSet = new HashSet<>();
+    private final HashSet<String> messageSendSet = new HashSet<>();
 
     @Test
     public void testSendReceiveSpringAutoConfiguration() throws InterruptedException {

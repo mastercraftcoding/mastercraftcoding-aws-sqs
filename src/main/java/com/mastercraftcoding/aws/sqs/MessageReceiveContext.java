@@ -11,7 +11,7 @@ public class MessageReceiveContext {
     private String messageId;
     private String receiptHandle;
     private String messageText;
-    private HashMap<String, MessageAttributeValue> customAttributes = new HashMap<>();
+    private final HashMap<String, MessageAttributeValue> customAttributes = new HashMap<>();
 
     private MessageReceiveContext() {
 
@@ -23,7 +23,7 @@ public class MessageReceiveContext {
 
     public static class Builder {
 
-        private MessageReceiveContext receiveContext;
+        private final MessageReceiveContext receiveContext;
 
         private Builder() {
             receiveContext = new MessageReceiveContext();

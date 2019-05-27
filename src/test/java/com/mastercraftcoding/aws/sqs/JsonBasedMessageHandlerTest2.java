@@ -29,7 +29,7 @@ public class JsonBasedMessageHandlerTest2 {
     @Autowired
     private TestJsonMessageHandler messageHandler;
 
-    private List<String> jsonMessageStream = new ArrayList<>();
+    private final List<String> jsonMessageStream = new ArrayList<>();
 
     @Test
     public void testSendReceiveJsonMessageSpringXmlConfiguration() throws Exception {

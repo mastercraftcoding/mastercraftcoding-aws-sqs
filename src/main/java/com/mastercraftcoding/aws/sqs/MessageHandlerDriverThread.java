@@ -10,11 +10,11 @@ public class MessageHandlerDriverThread implements Runnable {
 
     private static final Logger log = LoggerFactory.getLogger(MessageHandlerDriverThread.class);
 
-    private QueueManager queueManager;
-    private Thread driverThread;
-    private MessageHandler messageHandler;
-    private QueueConfiguration targetQueue;
-    private String[] messageAttributeNames;
+    private final QueueManager queueManager;
+    private final Thread driverThread;
+    private final MessageHandler messageHandler;
+    private final QueueConfiguration targetQueue;
+    private final String[] messageAttributeNames;
 
     public MessageHandlerDriverThread(QueueManager queueManager, MessageHandler messageHandler, String[] messageAttributeNames) {
         this.queueManager = queueManager;

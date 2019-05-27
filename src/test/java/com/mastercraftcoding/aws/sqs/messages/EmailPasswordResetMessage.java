@@ -2,7 +2,7 @@ package com.mastercraftcoding.aws.sqs.messages;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "javaType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, property = "javaType")
 public class EmailPasswordResetMessage {
 
     private String accountUsername;

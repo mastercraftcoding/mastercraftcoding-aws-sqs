@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class JsonUtility {
 
-    private static ObjectMapper objectMapper;
+    private static final ObjectMapper objectMapper;
     static {
         objectMapper = new ObjectMapper();
         objectMapper.writerWithDefaultPrettyPrinter();
@@ -34,18 +34,17 @@ public class JsonUtility {
         Class targetMessageClass = Class.forName(javaClassname);
 
         // Deserialize the json message
+        //noinspection unchecked
         return objectMapper.treeToValue(treeRoot, targetMessageClass);
     }
 
     public static Object jsonToObject(String json, Class objectClass) throws IOException {
 
-        Object returnObject = objectMapper.readerFor(objectClass).readValue(json);
-        return returnObject;
+        return objectMapper.readerFor(objectClass).readValue(json);
     }
 
     public static String objectToJson(Object object) throws JsonProcessingException {
 
-        String returnJson = objectMapper.writeValueAsString(object);
-        return returnJson;
+        return objectMapper.writeValueAsString(object);
     }
 }
